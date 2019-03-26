@@ -8,11 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		122C7D9A22498F0F00063FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7D9922498F0F00063FE0 /* AppDelegate.swift */; };
-		122C7D9C22498F0F00063FE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7D9B22498F0F00063FE0 /* ViewController.swift */; };
+		122C7D9C22498F0F00063FE0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7D9B22498F0F00063FE0 /* LoginViewController.swift */; };
 		122C7D9F22498F0F00063FE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122C7D9D22498F0F00063FE0 /* Main.storyboard */; };
 		122C7DA122498F1200063FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122C7DA022498F1200063FE0 /* Assets.xcassets */; };
 		122C7DA422498F1200063FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122C7DA222498F1200063FE0 /* LaunchScreen.storyboard */; };
 		122C7DAF22498F1200063FE0 /* TWSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DAE22498F1200063FE0 /* TWSimulatorTests.swift */; };
+		122C7DBA2249951000063FE0 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DB92249951000063FE0 /* Tweet.swift */; };
+		122C7DBB2249951000063FE0 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DB92249951000063FE0 /* Tweet.swift */; };
+		122C7DBE2249990800063FE0 /* TWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DBD2249990800063FE0 /* TWUser.swift */; };
+		122C7DBF2249990800063FE0 /* TWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DBD2249990800063FE0 /* TWUser.swift */; };
+		122C7DC122499A3E00063FE0 /* TWErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC022499A3E00063FE0 /* TWErrors.swift */; };
+		122C7DC222499A3E00063FE0 /* TWErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC022499A3E00063FE0 /* TWErrors.swift */; };
+		122C7DC522499C5F00063FE0 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC422499C5F00063FE0 /* MessagesTableViewController.swift */; };
+		122C7DC622499C5F00063FE0 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC422499C5F00063FE0 /* MessagesTableViewController.swift */; };
+		122C7DC922499CA100063FE0 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */; };
+		122C7DCA22499CA100063FE0 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */; };
+		122C7DCC224A594200063FE0 /* TWDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DCB224A594200063FE0 /* TWDataSource.swift */; };
+		122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DCB224A594200063FE0 /* TWDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +40,7 @@
 /* Begin PBXFileReference section */
 		122C7D9622498F0F00063FE0 /* TWSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		122C7D9922498F0F00063FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		122C7D9B22498F0F00063FE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		122C7D9B22498F0F00063FE0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		122C7D9E22498F0F00063FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		122C7DA022498F1200063FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		122C7DA322498F1200063FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +48,12 @@
 		122C7DAA22498F1200063FE0 /* TWSimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWSimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		122C7DAE22498F1200063FE0 /* TWSimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWSimulatorTests.swift; sourceTree = "<group>"; };
 		122C7DB022498F1200063FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		122C7DB92249951000063FE0 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		122C7DBD2249990800063FE0 /* TWUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWUser.swift; sourceTree = "<group>"; };
+		122C7DC022499A3E00063FE0 /* TWErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWErrors.swift; sourceTree = "<group>"; };
+		122C7DC422499C5F00063FE0 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		122C7DCB224A594200063FE0 /* TWDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				122C7D9922498F0F00063FE0 /* AppDelegate.swift */,
-				122C7D9B22498F0F00063FE0 /* ViewController.swift */,
+				122C7DC722499C7F00063FE0 /* View Controllers */,
+				122C7DC322499A4C00063FE0 /* Supporting */,
+				122C7DBC224998B400063FE0 /* Models */,
 				122C7D9D22498F0F00063FE0 /* Main.storyboard */,
 				122C7DA022498F1200063FE0 /* Assets.xcassets */,
 				122C7DA222498F1200063FE0 /* LaunchScreen.storyboard */,
@@ -94,6 +114,34 @@
 				122C7DB022498F1200063FE0 /* Info.plist */,
 			);
 			path = TWSimulatorTests;
+			sourceTree = "<group>";
+		};
+		122C7DBC224998B400063FE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				122C7DB92249951000063FE0 /* Tweet.swift */,
+				122C7DBD2249990800063FE0 /* TWUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		122C7DC322499A4C00063FE0 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				122C7DC022499A3E00063FE0 /* TWErrors.swift */,
+				122C7DCB224A594200063FE0 /* TWDataSource.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		122C7DC722499C7F00063FE0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				122C7D9B22498F0F00063FE0 /* LoginViewController.swift */,
+				122C7DC422499C5F00063FE0 /* MessagesTableViewController.swift */,
+				122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122C7D9C22498F0F00063FE0 /* ViewController.swift in Sources */,
+				122C7DC922499CA100063FE0 /* MessageTableViewCell.swift in Sources */,
+				122C7DBA2249951000063FE0 /* Tweet.swift in Sources */,
+				122C7DC522499C5F00063FE0 /* MessagesTableViewController.swift in Sources */,
+				122C7DCC224A594200063FE0 /* TWDataSource.swift in Sources */,
+				122C7DBE2249990800063FE0 /* TWUser.swift in Sources */,
+				122C7DC122499A3E00063FE0 /* TWErrors.swift in Sources */,
+				122C7D9C22498F0F00063FE0 /* LoginViewController.swift in Sources */,
 				122C7D9A22498F0F00063FE0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +260,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122C7DBF2249990800063FE0 /* TWUser.swift in Sources */,
+				122C7DC222499A3E00063FE0 /* TWErrors.swift in Sources */,
+				122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */,
 				122C7DAF22498F1200063FE0 /* TWSimulatorTests.swift in Sources */,
+				122C7DBB2249951000063FE0 /* Tweet.swift in Sources */,
+				122C7DC622499C5F00063FE0 /* MessagesTableViewController.swift in Sources */,
+				122C7DCA22499CA100063FE0 /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E994U5CV5A;
 				INFOPLIST_FILE = TWSimulator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E994U5CV5A;
 				INFOPLIST_FILE = TWSimulator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
