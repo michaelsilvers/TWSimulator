@@ -10,11 +10,20 @@ import Foundation
 
 class TWUser {
     
-    var username          : String = "TW User"
+    var userName          : String = "TW User"
     var firstName         : String?
     var lastName          : String?
     
     var lastLoggedInTime  : Int?
     var lastLoggedOutTime : Int?
 
+    init (username: String, firstname: String, lastname: String, lastloggedintime: Int) {
+        userName = username
+        firstName = firstname
+        lastName = lastname
+        lastLoggedInTime = lastloggedintime
+    }
+    
+    init() { }
+    
 }

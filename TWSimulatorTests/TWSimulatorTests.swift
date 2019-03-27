@@ -11,6 +11,7 @@ import XCTest
 
 class TWSimulatorTests: XCTestCase {
 
+    //MARK: Tweet datasource functionality tests
     func testDataSourceNextIdNumber() {
 
         let tds = TWDataSource.shared
@@ -153,6 +154,30 @@ class TWSimulatorTests: XCTestCase {
         let futuretime = Int(Date().timeIntervalSince1970) + 2000
         theresults = tds.getMessages(futuretime)
         XCTAssertTrue(theresults.count == 0, "We were expecting 0 records, we found \(theresults.count)")
-
     }
+    
+    //MARK: TWUser tests
+    func testTWUserCreation() {
+        
+        var theuser = TWUser()
+        
+        // testing the default values for the user
+        XCTAssertTrue(theuser.firstName == nil, "The first name is NOT nil")
+        XCTAssertTrue(theuser.lastName == nil, "The last name is NOT nil")
+        XCTAssertTrue(theuser.lastLoggedInTime == nil, "The last logged in time is NOT nil")
+        XCTAssertTrue(theuser.lastLoggedOutTime == nil, "The last logged out time is NOT nil")
+        XCTAssertTrue(theuser.userName == "TW User", "The default username was not used.  The username is \(theuser.userName)")
+
+        // make some changes to the user and test to make sure the user changes are reflected properly
+        theuser.userName = "mike"
+        XCTAssertTrue(theuser.userName == "mike", "The username 'mike' was not used.  The username is '\(theuser.userName)'")
+
+        let loggedin = Int(Date().timeIntervalSince1970)
+        theuser.lastLoggedInTime = loggedin
+        XCTAssertTrue(theuser.lastLoggedInTime == loggedin,
+                      "The last logged in time is not \(loggedin).  It is \(theuser.lastLoggedInTime ?? -1)")
+        
+        
+    }
+
 }

@@ -8,15 +8,10 @@
 
 import Foundation
 
-struct UserError: Error {
+enum UserError: Error {
     
-    enum UserErrorTypes {
-        case UsernameExists
-        case PasswordNotStrong
-        case UsernameOrPasswordIncorrect
-    }
-    
-    let message : String
-    let errorType : UserErrorTypes
-    
+    case UsernameExists
+    case PasswordNotStrong
+    case UsernameOrPasswordIncorrect
+        
 }

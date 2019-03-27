@@ -25,6 +25,8 @@
 		122C7DCA22499CA100063FE0 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */; };
 		122C7DCC224A594200063FE0 /* TWDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DCB224A594200063FE0 /* TWDataSource.swift */; };
 		122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DCB224A594200063FE0 /* TWDataSource.swift */; };
+		127C3E44224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
+		127C3E45224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 		122C7DC422499C5F00063FE0 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		122C7DCB224A594200063FE0 /* TWDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataSource.swift; sourceTree = "<group>"; };
+		127C3E43224B0591002A8399 /* TWComms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWComms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,7 @@
 			children = (
 				122C7DC022499A3E00063FE0 /* TWErrors.swift */,
 				122C7DCB224A594200063FE0 /* TWDataSource.swift */,
+				127C3E43224B0591002A8399 /* TWComms.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -253,6 +257,7 @@
 				122C7DC122499A3E00063FE0 /* TWErrors.swift in Sources */,
 				122C7D9C22498F0F00063FE0 /* LoginViewController.swift in Sources */,
 				122C7D9A22498F0F00063FE0 /* AppDelegate.swift in Sources */,
+				127C3E44224B0591002A8399 /* TWComms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +270,7 @@
 				122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */,
 				122C7DAF22498F1200063FE0 /* TWSimulatorTests.swift in Sources */,
 				122C7DBB2249951000063FE0 /* Tweet.swift in Sources */,
+				127C3E45224B0591002A8399 /* TWComms.swift in Sources */,
 				122C7DC622499C5F00063FE0 /* MessagesTableViewController.swift in Sources */,
 				122C7DCA22499CA100063FE0 /* MessageTableViewCell.swift in Sources */,
 			);

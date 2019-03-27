@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // we need to see if the user is still logged in:
+        // get the user from the keychain
+        var user: TWUser? = nil
+        if user == nil {
+            // this will display the log in page
+            window?.rootViewController?.performSegue(withIdentifier: "LoginSegue", sender: nil)
+        }
+        
+        
         return true
     }
 
