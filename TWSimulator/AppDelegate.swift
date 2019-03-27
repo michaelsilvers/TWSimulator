@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,12 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // we need to see if the user is still logged in:
         // get the user from the keychain
-        var user: TWUser? = nil
-        if user == nil {
+        if let _ = KeychainWrapper.standard.object(forKey: "TWUser") {
+            // do nothing
+            // we are not using a guard statement here because we need to continue if they are
+            // logged in earlier
+        } else {
             // this will display the log in page
             window?.rootViewController?.performSegue(withIdentifier: "LoginSegue", sender: nil)
         }
-        
         
         return true
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class MessagesTableViewController: UITableViewController {
 
@@ -32,7 +33,8 @@ class MessagesTableViewController: UITableViewController {
     @IBAction func logoutUser(_ sender: Any) {
         
         // destroy the user in the keychain
-        
+        // in the future we would deal with the error here (the remove is returning a bool)
+        KeychainWrapper.standard.removeObject(forKey: "TWUser")
         
         // go back to the login screen
         navigationController?.performSegue(withIdentifier: "LoginSegue", sender: nil)

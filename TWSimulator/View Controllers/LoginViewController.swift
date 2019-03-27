@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
 
@@ -30,7 +31,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func processLogin(_ sender : UIButton) {
         
-        var user:TWUser? = nil
+        var user:TWUser?
         
         do {
             
@@ -38,10 +39,26 @@ class LoginViewController: UIViewController {
             user = try TWComms().checkLogin(usernameText?.text ?? "", passwordText?.text ?? "")
             
             // now we should save the user to the keychain so we are able to "autosign-in"
-            
-            
-            // show the rootviewcontroller now
-            self.navigationController?.popToRootViewController(animated: true)
+            if let saveuser = user {
+                if !KeychainWrapper.standard.set(saveuser, forKey: "TWUser") {
+                    // there was a problem saving the user in the keychain
+                    user = nil
+                    
+                    // show the error
+                    // change the username and password to red
+                    usernameText?.backgroundColor = UIColor.red
+                    passwordText?.backgroundColor = UIColor.red
+                    
+                    // display the message
+                    errorMessage?.textColor = UIColor.red
+                    errorMessage?.text = "There was a problem saving the user.  Please try again."
+
+                } else {
+                    // The save was successful
+                    // show the rootviewcontroller now
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
             
         } catch let error as UserError {
             

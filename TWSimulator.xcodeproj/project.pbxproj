@@ -27,6 +27,7 @@
 		122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DCB224A594200063FE0 /* TWDataSource.swift */; };
 		127C3E44224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
 		127C3E45224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
+		925C0BAF1D0EB7BC397C43A4 /* Pods_TWSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,9 @@
 		122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		122C7DCB224A594200063FE0 /* TWDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataSource.swift; sourceTree = "<group>"; };
 		127C3E43224B0591002A8399 /* TWComms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWComms.swift; sourceTree = "<group>"; };
+		A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.release.xcconfig"; sourceTree = "<group>"; };
+		C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925C0BAF1D0EB7BC397C43A4 /* Pods_TWSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				122C7D9822498F0F00063FE0 /* TWSimulator */,
 				122C7DAD22498F1200063FE0 /* TWSimulatorTests */,
 				122C7D9722498F0F00063FE0 /* Products */,
+				F7E19EA11CF1F95B6D4EA6C1 /* Pods */,
+				BEFC4D647B6147E6F7F2A1BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +155,23 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		BEFC4D647B6147E6F7F2A1BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7E19EA11CF1F95B6D4EA6C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */,
+				BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 122C7DB322498F1200063FE0 /* Build configuration list for PBXNativeTarget "TWSimulator" */;
 			buildPhases = (
+				8EE82621EB69FFB3D502809F /* [CP] Check Pods Manifest.lock */,
 				122C7D9222498F0F00063FE0 /* Sources */,
 				122C7D9322498F0F00063FE0 /* Frameworks */,
 				122C7D9422498F0F00063FE0 /* Resources */,
+				C5DFDEFFFD01A1D89DCA21AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +269,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8EE82621EB69FFB3D502809F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWSimulator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5DFDEFFFD01A1D89DCA21AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		122C7D9222498F0F00063FE0 /* Sources */ = {
@@ -424,6 +497,7 @@
 		};
 		122C7DB422498F1200063FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +517,7 @@
 		};
 		122C7DB522498F1200063FE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
