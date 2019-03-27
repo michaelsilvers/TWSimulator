@@ -92,6 +92,9 @@
                             <barButtonItem style="plain" systemItem="add" id="BoU-YN-fKd">
                                 <connections>
                                     <action selector="addTweet:" destination="wG0-Ic-Rx0" id="lvd-uV-S5X"/>
+                                    <segue destination="kDZ-jP-MZF" kind="popoverPresentation" identifier="AddTweetSegue" popoverAnchorBarButtonItem="BoU-YN-fKd" id="k0B-gd-pF6">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Log Out" id="qn9-ue-8rZ">
@@ -233,7 +236,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBp-Ug-bLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-658.39999999999998" y="-821.73913043478262"/>
+            <point key="canvasLocation" x="-658" y="-458"/>
+        </scene>
+        <!--Add Tweet View Controller-->
+        <scene sceneID="1hw-n6-MhT">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="kDZ-jP-MZF" customClass="AddTweetViewController" customModule="TWSimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZEV-tn-J9x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Gy4-YL-yAe"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u45-2b-vSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="382"/>
         </scene>
     </scenes>
     <resources>

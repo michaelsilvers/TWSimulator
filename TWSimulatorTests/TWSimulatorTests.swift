@@ -80,7 +80,7 @@ class TWSimulatorTests: XCTestCase {
         let tds = TWDataSource.shared
         tds.clearAllMessages()
 
-        // Add a few Tweets to the list
+        // Add a few Tweets to the list - using the full initializer
         for x in 1...5 {
             // we are using the current Epoch time and adding a multiple for seconds because this loop can run and
             // fill the array quicket than one per second (we are using an Int for the epoch time)
@@ -88,6 +88,26 @@ class TWSimulatorTests: XCTestCase {
         }
         
         XCTAssertTrue(tds.getMessages().count == 5, "We are expecting 5 tweets.  We had \(tds.getMessages().count)")
+
+        // lets test the minimal initializer for the tweet
+        tds.clearAllMessages()
+        for x in 1...5 {
+            // we are using the current Epoch time and adding a multiple for seconds because this loop can run and
+            // fill the array quicket than one per second (we are using an Int for the epoch time)
+            tds.addMessage(Tweet("Test message \(x)"))
+        }
+
+        XCTAssertTrue(tds.getMessages().count == 5, "We are expecting 5 tweets.  We had \(tds.getMessages().count)")
+        
+        // grab one of the tweets to make sure it was reated correctly
+        if let tt = tds.getSingleTweet(2) {
+            XCTAssertTrue(tt.createdTimeDate > 0, "The created time for the tweet was not set correctly.  Expecting > 0, got \(tt.createdTimeDate)")
+            XCTAssertTrue(tt.messageId > 0, "The message ID was not set correctly.  Expecting a number, got \(tt.messageId)")
+            XCTAssertFalse(tt.message.isEmpty, "We are expecting a message.  The message was empty.")
+            XCTAssertTrue(tt.readTimeDate == 0, "We are expecting the read to be 0.  We got \(tt.readTimeDate ?? 0)")
+        } else {
+            XCTAssert(true, "There was a problem pulling a tweet from the list.")
+        }
 
     }
 

@@ -27,6 +27,8 @@
 		122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C7DCB224A594200063FE0 /* TWDataSource.swift */; };
 		127C3E44224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
 		127C3E45224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
+		127C3E47224C1C5A002A8399 /* AddTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */; };
+		127C3E48224C1C5A002A8399 /* AddTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */; };
 		925C0BAF1D0EB7BC397C43A4 /* Pods_TWSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */; };
 		EE0D5EDE618E1C6F91814B2E /* Pods_TWSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,7 @@
 		122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		122C7DCB224A594200063FE0 /* TWDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataSource.swift; sourceTree = "<group>"; };
 		127C3E43224B0591002A8399 /* TWComms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWComms.swift; sourceTree = "<group>"; };
+		127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTweetViewController.swift; sourceTree = "<group>"; };
 		A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 				122C7D9B22498F0F00063FE0 /* LoginViewController.swift */,
 				122C7DC422499C5F00063FE0 /* MessagesTableViewController.swift */,
 				122C7DC822499CA100063FE0 /* MessageTableViewCell.swift */,
+				127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -355,6 +359,7 @@
 			files = (
 				122C7DC922499CA100063FE0 /* MessageTableViewCell.swift in Sources */,
 				122C7DBA2249951000063FE0 /* Tweet.swift in Sources */,
+				127C3E47224C1C5A002A8399 /* AddTweetViewController.swift in Sources */,
 				122C7DC522499C5F00063FE0 /* MessagesTableViewController.swift in Sources */,
 				122C7DCC224A594200063FE0 /* TWDataSource.swift in Sources */,
 				122C7DBE2249990800063FE0 /* TWUser.swift in Sources */,
@@ -372,6 +377,7 @@
 				122C7DBF2249990800063FE0 /* TWUser.swift in Sources */,
 				122C7DC222499A3E00063FE0 /* TWErrors.swift in Sources */,
 				122C7DCD224A594200063FE0 /* TWDataSource.swift in Sources */,
+				127C3E48224C1C5A002A8399 /* AddTweetViewController.swift in Sources */,
 				122C7DAF22498F1200063FE0 /* TWSimulatorTests.swift in Sources */,
 				122C7DBB2249951000063FE0 /* Tweet.swift in Sources */,
 				127C3E45224B0591002A8399 /* TWComms.swift in Sources */,

@@ -43,4 +43,20 @@ struct Tweet : Codable, Comparable {
         }
     }
     
+    init(_ newMessage: String) {
+        
+        messageId = TWDataSource.shared.nextIdNumber()
+        createdTimeDate = Int(Date().timeIntervalSince1970)
+        readTimeDate = 0
+        message = newMessage
+        
+    }
+    
+    init (messageId: Int, createdTimeDate: Int, readTimeDate: Int, message: String) {
+        self.messageId = messageId
+        self.createdTimeDate = createdTimeDate
+        self.readTimeDate = readTimeDate
+        self.message = message
+    }
+    
 }

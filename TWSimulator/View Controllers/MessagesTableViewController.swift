@@ -49,6 +49,8 @@ class MessagesTableViewController: UITableViewController {
 
     @IBAction func addTweet(_ sender: Any) {
         
+        // display a popover to add the tweet
+        
     }
 
     // MARK: - Table view data source
@@ -69,6 +71,7 @@ class MessagesTableViewController: UITableViewController {
         // Configure the cell...
         var tweet = tweets[indexPath.row]
 
+        // put together the read time screen
         if let rt = tweet.readTimeDate, rt > 0 {
             // we read the tweet
             cell.imageView?.isHidden = false
@@ -84,6 +87,7 @@ class MessagesTableViewController: UITableViewController {
             TWDataSource.shared.addMessage(tweet)
         }
         
+        // set the other tweet information
         cell.messageLabel?.text = tweet.message
         cell.sentLabel?.text = createdDateFormat.string(from: Date(timeIntervalSince1970: Double(tweet.createdTimeDate)))
 

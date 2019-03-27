@@ -15,3 +15,9 @@ enum UserError: Error {
     case UsernameOrPasswordIncorrect
         
 }
+
+enum FieldErrors: Error {
+    
+    case emptyFieldError(_ message: String)
+    
+}
