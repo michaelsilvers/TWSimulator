@@ -11,14 +11,6 @@ import XCTest
 
 class TWSimulatorTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testDataSourceNextIdNumber() {
 
         let tds = TWDataSource.shared
@@ -40,7 +32,7 @@ class TWSimulatorTests: XCTestCase {
 
     }
 
-    func testDataSourceAddMessage() {
+    func testDataSourceUpdateMessage() {
         
         let tds = TWDataSource.shared
         tds.clearAllMessages()
@@ -82,19 +74,85 @@ class TWSimulatorTests: XCTestCase {
         
     }
 
-    func testDataSourceUpdateMessage() {
+    func testDataSourceAddMessage() {
         
-    }
+        let tds = TWDataSource.shared
+        tds.clearAllMessages()
 
-    func testDataSourceOrderOfMessages() {
-        
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        // Add a few Tweets to the list
+        for x in 1...5 {
+            // we are using the current Epoch time and adding a multiple for seconds because this loop can run and
+            // fill the array quicket than one per second (we are using an Int for the epoch time)
+            tds.addMessage(Tweet(messageId: 0, createdTimeDate: (Int(Date().timeIntervalSince1970) + (x*2)), readTimeDate: 0, message: "Test message \(x)"))
         }
+        
+        XCTAssertTrue(tds.getMessages().count == 5, "We are expecting 5 tweets.  We had \(tds.getMessages().count)")
+
     }
 
+    func testDataSourceOrderOfMessagesAndRetrievalOfRecords() {
+        
+        let tds = TWDataSource.shared
+        tds.clearAllMessages()
+        
+        // this variable will be used as a timestamp for the reordering of the records
+        var timeinthemiddle:Int = 0
+        
+        // Add a few Tweets to the list
+        for x in 1...5 {
+            // we are using the current Epoch time and adding a multiple for seconds because this loop can run and
+            // fill the array quicket than one per second (we are using an Int for the epoch time)
+            let created = (Int(Date().timeIntervalSince1970) + (x*2))
+            
+            // save the middle time when the times are added
+            if x == 3 { timeinthemiddle = created }
+            
+            // add the message
+            tds.addMessage(Tweet(messageId: 0, createdTimeDate: created, readTimeDate: 0, message: "Test message \(x)"))
+        }
+
+        // now lets test the processes -
+        var theresults = tds.getMessages()
+        XCTAssertTrue(theresults.count == 5, "We were expecting 5 records, we found \(theresults.count)")
+        
+        // lets make sure the results are in the proper descending order - when all records are returned
+        var lastcreated: Int = 0
+        for t in theresults {
+            
+            // only test if the lastcreated was set
+            if lastcreated != 0, lastcreated < t.createdTimeDate {
+                // if we are here, then the last created was not > the current record.  The records should be descending.
+                XCTAssert(true, "The record is not in the proper order.  The lastcreated is \(lastcreated) and the current record is \(t.createdTimeDate)")
+            }
+            
+            // this saves the time created on the last record
+            lastcreated = t.createdTimeDate
+        }
+        
+        // this test is making sure the order is correct when we pull records from a specific date
+        theresults.removeAll()
+        theresults = tds.getMessages(timeinthemiddle)
+        XCTAssertTrue(theresults.count == 3, "We were expecting 3 records, we found \(theresults.count)")
+
+        // lets make sure the results are in the proper descending order
+        lastcreated = 0
+        for t in theresults {
+            
+            // only test if the lastcreated was set
+            if lastcreated != 0, lastcreated < t.createdTimeDate {
+                // if we are here, then the last created was not > the current record.  The records should be descending.
+                XCTAssert(true, "The record is not in the proper order.  The lastcreated is \(lastcreated) and the current record is \(t.createdTimeDate)")
+            }
+            
+            // this saves the time created on the last record
+            lastcreated = t.createdTimeDate
+        }
+
+        // testing for a date after the records were created (future records)
+        theresults.removeAll()
+        let futuretime = Int(Date().timeIntervalSince1970) + 2000
+        theresults = tds.getMessages(futuretime)
+        XCTAssertTrue(theresults.count == 0, "We were expecting 0 records, we found \(theresults.count)")
+
+    }
 }
