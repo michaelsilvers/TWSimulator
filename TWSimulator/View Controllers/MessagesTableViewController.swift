@@ -12,9 +12,15 @@ import SwiftKeychainWrapper
 class MessagesTableViewController: UITableViewController {
 
     private var tweets: [Tweet] = []
-    
+    private var readDateFormat = DateFormatter()
+    private var createdDateFormat = DateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // we only need to set these one time - yup - one time
+        readDateFormat.dateFormat = "'Read:' MM/dd/yyyy HH:mm:ss"
+        createdDateFormat.dateFormat = "MM/dd/yyyy HH:mm:ss"
 
     }
     
@@ -61,11 +67,32 @@ class MessagesTableViewController: UITableViewController {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell)
 
         // Configure the cell...
+        var tweet = tweets[indexPath.row]
+
+        if let rt = tweet.readTimeDate, rt > 0 {
+            // we read the tweet
+            cell.imageView?.isHidden = false
+            let readD = Date(timeIntervalSince1970: Double(rt))
+            cell.readLabel?.text = readDateFormat.string(from: readD)
+        } else {
+            // we didn't read the tweet
+            cell.imageView?.isHidden = true
+            cell.readLabel?.text = ""
+            // and update the tweet with the read date time
+            tweet.readTimeDate = Int(Date().timeIntervalSince1970)
+            // update the tweet with the new read date
+            TWDataSource.shared.addMessage(tweet)
+        }
         
+        cell.messageLabel?.text = tweet.message
+        cell.sentLabel?.text = createdDateFormat.string(from: Date(timeIntervalSince1970: Double(tweet.createdTimeDate)))
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
     /*
     // Override to support conditional editing of the table view.
