@@ -10,6 +10,11 @@ import UIKit
 
 class MessageTableViewCell: UITableViewCell {
 
+    @IBOutlet var readIndicator: UIImageView?
+    @IBOutlet var messageLabel: UILabel?
+    @IBOutlet var readLabel: UILabel?
+    @IBOutlet var sentLabel: UILabel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
