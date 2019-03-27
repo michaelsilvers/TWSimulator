@@ -20,6 +20,13 @@ struct TWComms {
             throw UserError.UsernameOrPasswordIncorrect
         }
         
-        return TWUser(username: "mike", firstname: "Mike", lastname: "Silvers", lastloggedintime: Int(Date().timeIntervalSince1970))
+        // we will add the user to the keychain - this will allow us to retrieve it from the secure location later
+        let user = TWUser(username: "mike", firstname: "Mike", lastname: "Silvers", lastloggedintime: Int(Date().timeIntervalSince1970))
+        
+        
+        
+        
+        // return the user object to the caller for them to reference as the app is running
+        return user
     }
 }

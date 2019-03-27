@@ -19,7 +19,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // we are hiding the navigation bar to prevent users from moving away from the login view
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
+    }
+    
     @IBAction func processLogin(_ sender : UIButton) {
         
         var user:TWUser? = nil
@@ -59,6 +67,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-
+    
+    
 }
 

@@ -10,37 +10,59 @@ import UIKit
 
 class MessagesTableViewController: UITableViewController {
 
+    private var tweets: [Tweet] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // make sure the navigation bar is present
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        // fill the tweet array from the data source
+        tweets = TWDataSource.shared.getMessages()
+        
+    }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    // MARK: Supporting functions
+    @IBAction func logoutUser(_ sender: Any) {
+        
+        // destroy the user in the keychain
+        
+        
+        // go back to the login screen
+        navigationController?.performSegue(withIdentifier: "LoginSegue", sender: nil)
+        
+    }
+
+    @IBAction func addTweet(_ sender: Any) {
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // we are only having one section
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tweets.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

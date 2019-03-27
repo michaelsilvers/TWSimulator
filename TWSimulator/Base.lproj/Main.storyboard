@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--TW Sim-->
         <scene sceneID="zTe-Jt-TBs">
             <objects>
-                <tableViewController id="wG0-Ic-Rx0" customClass="MessagesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="wG0-Ic-Rx0" customClass="MessagesTableViewController" customModule="TWSimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ia3-Tw-qth">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,20 @@
                             <outlet property="delegate" destination="wG0-Ic-Rx0" id="ZdG-Up-to8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="yAQ-yR-WkV"/>
+                    <navigationItem key="navigationItem" title="TW Sim" id="yAQ-yR-WkV">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="BoU-YN-fKd">
+                                <connections>
+                                    <action selector="addTweet:" destination="wG0-Ic-Rx0" id="lvd-uV-S5X"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Log Out" id="qn9-ue-8rZ">
+                                <connections>
+                                    <action selector="logoutUser:" destination="wG0-Ic-Rx0" id="BaT-mp-mCL"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGw-83-8nd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
