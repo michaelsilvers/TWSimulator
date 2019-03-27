@@ -8,7 +8,10 @@
 
 import Foundation
 
-class TWUser : NSCoding {
+// Note for reviewers: I am using NSObject and NSCoding here because we are saving the
+// TWUser object in the keychain for security.  Saving an object in the keychain requires
+// the NSObject and NSCoding protocols.
+class TWUser : NSObject, NSCoding {
     
     var userName          : String = "TW User"
     var firstName         : String?
@@ -61,6 +64,6 @@ class TWUser : NSCoding {
         lastLoggedInTime = lastloggedintime
     }
     
-    init() { }
+    override init() { super.init() }
     
 }

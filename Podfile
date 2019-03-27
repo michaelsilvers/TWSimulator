@@ -7,5 +7,10 @@ target 'TWSimulator' do
 
   # Pods for TWSimulator
   pod 'SwiftKeychainWrapper'
+  
+  target 'TWSimulatorTests' do
+      inherit! :search_paths
+#      pod 'SwiftKeychainWrapper'
+  end
 
 end

@@ -21,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // we need to see if the user is still logged in:
         // get the user from the keychain
         if let _ = KeychainWrapper.standard.object(forKey: "TWUser") {
-            // do nothing
-            // we are not using a guard statement here because we need to continue if they are
-            // logged in earlier
+            // instance the TWDataSource so the past tweets are loaded before they are shown
+            TWDataSource.shared.getMessages()
         } else {
             // this will display the log in page
             window?.rootViewController?.performSegue(withIdentifier: "LoginSegue", sender: nil)

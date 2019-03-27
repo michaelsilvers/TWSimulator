@@ -11,14 +11,107 @@ import Foundation
 class TWDataSource {
 
     private var messages: [Tweet] = []
+    
+    //MARK: Reading/Writing from documents
+    // Based on: https://github.com/MakeAppPiePublishing/Tips_02_Read_Write_Text_End
+    private var DocumentDirURL:URL{
+        let url = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        return url
+    }
+    
+    private func fileURL(_ fileName:String,_ fileExtension:String="json")-> URL{
+        
+        return DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension(fileExtension)
+        
+    }
+    
+    func writeFile(_ writeString:String,_ fileName:String,_ fileExtension:String = "json") {
+        let url = fileURL(fileName, fileExtension)
+        do{
+            try writeString.write(to: url, atomically: true, encoding: .utf8)
+        } catch let error as NSError {
+            print ("Failed writing to URL: \(String(describing: fileURL)), Error:" + error.localizedDescription)
+        }
+    }
+    
+    func readFile(_ fileName:String,_ fileExtension:String = "json") -> String {
+        var readString = ""
+        let url = fileURL(fileName, fileExtension)
+        do{
+            readString = try String(contentsOf: url)
+        } catch let error as NSError {
+            print ("Failed writing to URL: \(String(describing: fileURL)), Error:" + error.localizedDescription)
+        }
+        return readString
+    }
+    // End of the reference (https://github.com/MakeAppPiePublishing/Tips_02_Read_Write_Text_End)
+    
+    func fileExists(_ fileName:String,_ fileExtension:String = "json") -> Bool {
+        
+        var retBool = false
+        
+        let url = fileURL(fileName, fileExtension)
+        
+        retBool = FileManager.default.fileExists(atPath: url.absoluteString)
+        
+        return retBool
+    }
+    
+    @discardableResult func removeFile(_ fileName:String,_ fileExtension:String = "json") -> Bool {
+        
+        var retBool = false
+        
+        let url = fileURL(fileName, fileExtension)
+        
+        do {
+            try FileManager.default.removeItem(at: url)
+            retBool = true
+        } catch {
+            // do nothing - retBool is defaulted to false
+        }
+        
+        return retBool
+    }
 
     // we are using a singleton so there is only one datasource for the entire project
     static let shared = TWDataSource()
     
     // Initialization for the singleton
-    private init() {  }
+    private init() {
+        
+        // at the initial initilization, lets load the JSON file from the Documents directory - if it exists
+        if fileExists("tw_messages"), let jsonData = readFile("tw_messages").data(using: .utf8) {
+            
+            do {
+                
+                // lets decode the json
+                messages = try JSONDecoder().decode([Tweet].self, from: jsonData)
+                
+            } catch {
+                print("There was an error when decoding the json.  The error is \(error.localizedDescription)")
+            }
+            
+        }
+        
+    }
     
-    func getMessages(_ fromDate: Int = 0) -> [Tweet] {
+    func saveMessages() {
+        
+        // only save the json if there are messages in the array
+        if messages.count > 0 {
+            do {
+                if let writeme = String(data:try JSONEncoder().encode(messages), encoding: .utf8) {
+                    let url = fileURL("tw_messages")
+                    try writeme.write(to: url, atomically: true, encoding: .utf8)
+                }
+            } catch {
+                print("There was an error when encoding the json.  The error is \(error.localizedDescription)")
+            }
+        }
+        
+    }
+    
+    @discardableResult func getMessages(_ fromDate: Int = 0) -> [Tweet] {
         
         if fromDate == 0 {
             // there was no date passed in - we will return all  of the messages
@@ -94,6 +187,10 @@ class TWDataSource {
     
     func clearAllMessages() {
         messages.removeAll()
+        
+        // delete the saved messages in the documents directory
+        removeFile("tw_messages")
+        
     }
     
     private func loadMessages() {

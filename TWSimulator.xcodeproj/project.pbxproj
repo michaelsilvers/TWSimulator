@@ -28,6 +28,7 @@
 		127C3E44224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
 		127C3E45224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
 		925C0BAF1D0EB7BC397C43A4 /* Pods_TWSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */; };
+		EE0D5EDE618E1C6F91814B2E /* Pods_TWSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122C7D9622498F0F00063FE0 /* TWSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		122C7D9922498F0F00063FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		122C7D9B22498F0F00063FE0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		D2A2D32EF8612C6B8A9BD5E6 /* Pods-TWSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D787DCCE5705347403CCE628 /* Pods-TWSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0D5EDE618E1C6F91814B2E /* Pods_TWSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */,
+				0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 			children = (
 				C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */,
 				BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */,
+				D2A2D32EF8612C6B8A9BD5E6 /* Pods-TWSimulatorTests.debug.xcconfig */,
+				D787DCCE5705347403CCE628 /* Pods-TWSimulatorTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -198,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 122C7DB622498F1200063FE0 /* Build configuration list for PBXNativeTarget "TWSimulatorTests" */;
 			buildPhases = (
+				E7AECCF371D4E1C4D2702DA2 /* [CP] Check Pods Manifest.lock */,
 				122C7DA622498F1200063FE0 /* Sources */,
 				122C7DA722498F1200063FE0 /* Frameworks */,
 				122C7DA822498F1200063FE0 /* Resources */,
@@ -313,6 +322,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AECCF371D4E1C4D2702DA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWSimulatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -537,6 +568,7 @@
 		};
 		122C7DB722498F1200063FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2A2D32EF8612C6B8A9BD5E6 /* Pods-TWSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -558,6 +590,7 @@
 		};
 		122C7DB822498F1200063FE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D787DCCE5705347403CCE628 /* Pods-TWSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

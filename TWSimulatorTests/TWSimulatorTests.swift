@@ -156,16 +156,50 @@ class TWSimulatorTests: XCTestCase {
         XCTAssertTrue(theresults.count == 0, "We were expecting 0 records, we found \(theresults.count)")
     }
     
+    func testTweetSaveInDocumentsDirectoryAsJSONFile() {
+        
+        let tds = TWDataSource.shared
+        tds.clearAllMessages()
+        
+        // Add a few Tweets to the list
+        for x in 1...5 {
+            // we are using the current Epoch time and adding a multiple for seconds because this loop can run and
+            // fill the array quicket than one per second (we are using an Int for the epoch time)
+            let created = (Int(Date().timeIntervalSince1970) + (x*2))
+            
+            // add the message
+            tds.addMessage(Tweet(messageId: 0, createdTimeDate: created, readTimeDate: 0, message: "Test message \(x)"))
+        }
+
+        // save the messages to the directory
+        tds.saveMessages()
+        
+        let saved = tds.readFile("tw_messages")
+        
+        var jsondir:[Tweet]?
+        
+        // now for the test - if we can encode the json, we arte good
+        if let jd = saved.data(using: .utf8) {
+            jsondir = try? JSONDecoder().decode([Tweet].self, from: jd)
+        }
+
+        XCTAssertNotNil(jsondir, "There was a problem, the array of Tweets is nil")
+
+        // lets see if this is valid JSON:
+        if jsondir != nil {
+            // if this was successful, lets see the number of records
+            XCTAssertTrue(jsondir?.count == 5, "Expecting 5 Tweets, but there are \(jsondir?.count ?? 0) Tweets.")
+        }
+    }
+    
     //MARK: TWUser tests
     func testTWUserCreation() {
         
-        var theuser = TWUser()
+        let theuser = TWUser()
         
         // testing the default values for the user
         XCTAssertTrue(theuser.firstName == nil, "The first name is NOT nil")
         XCTAssertTrue(theuser.lastName == nil, "The last name is NOT nil")
-        XCTAssertTrue(theuser.lastLoggedInTime == nil, "The last logged in time is NOT nil")
-        XCTAssertTrue(theuser.lastLoggedOutTime == nil, "The last logged out time is NOT nil")
         XCTAssertTrue(theuser.userName == "TW User", "The default username was not used.  The username is \(theuser.userName)")
 
         // make some changes to the user and test to make sure the user changes are reflected properly
@@ -175,9 +209,7 @@ class TWSimulatorTests: XCTestCase {
         let loggedin = Int(Date().timeIntervalSince1970)
         theuser.lastLoggedInTime = loggedin
         XCTAssertTrue(theuser.lastLoggedInTime == loggedin,
-                      "The last logged in time is not \(loggedin).  It is \(theuser.lastLoggedInTime ?? -1)")
-        
-        
+                      "The last logged in time is not \(loggedin).  It is \(theuser.lastLoggedInTime )")
     }
 
 }
