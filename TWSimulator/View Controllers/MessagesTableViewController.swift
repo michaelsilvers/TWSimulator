@@ -9,6 +9,13 @@
 import UIKit
 import SwiftKeychainWrapper
 
+/**
+ Controls the display of the tweets in a table
+ 
+ This controller manages and maintains the display of the tweets in a table view.
+ - Author: Mike Silvers
+ - Date: 3/25/19
+ */
 class MessagesTableViewController: UITableViewController {
 
     // MARK: Variable declarations

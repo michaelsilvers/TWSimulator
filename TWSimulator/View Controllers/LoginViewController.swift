@@ -9,6 +9,13 @@
 import UIKit
 import SwiftKeychainWrapper
 
+/**
+ View controller used to control the display and functionality for the login process.
+ 
+ This controller manages and maintains the display of the login view.
+ - Author: Mike Silvers
+ - Date: 3/25/19
+ */
 class LoginViewController: UIViewController {
 
     // MARK: Variable declarations
