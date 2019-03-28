@@ -12,6 +12,9 @@ import XCTest
 class TWSimulatorTests: XCTestCase {
 
     //MARK: Tweet datasource functionality tests
+    /**
+     Testing the next ID number function for `Tweet` records.
+    */
     func testDataSourceNextIdNumber() {
 
         let tds = TWDataSource.shared
@@ -28,11 +31,15 @@ class TWSimulatorTests: XCTestCase {
             tds.addMessage(Tweet(messageId: 0, createdTimeDate: (Int(Date().timeIntervalSince1970) + (x*2)), readTimeDate: 0, message: "Test message \(x)"))
         }
         
+        // obtain the next number and make sure it is actually the next number
         nn = tds.nextIdNumber()
         XCTAssertTrue(nn == 6, "The next number for the ID should be 6, but the result was \(nn)")
 
     }
 
+    /**
+     Testing the data source update processes.
+    */
     func testDataSourceUpdateMessage() {
         
         let tds = TWDataSource.shared
@@ -41,7 +48,7 @@ class TWSimulatorTests: XCTestCase {
         // Add a few Tweets to the list
         for x in 1...5 {
             // we are using the current Epoch time and adding a multiple for seconds because this loop can run and
-            // fill the array quicket than one per second (we are using an Int for the epoch time)
+            // fill the array quicker than one per second (we are using an Int for the epoch time)
             tds.addMessage(Tweet(messageId: 0, createdTimeDate: (Int(Date().timeIntervalSince1970) + (x*2)), readTimeDate: 0, message: "Test message \(x)"))
         }
         
@@ -75,6 +82,9 @@ class TWSimulatorTests: XCTestCase {
         
     }
 
+    /**
+     Testing the data source add process.
+     */
     func testDataSourceAddMessage() {
         
         let tds = TWDataSource.shared
@@ -101,6 +111,7 @@ class TWSimulatorTests: XCTestCase {
         
         // grab one of the tweets to make sure it was reated correctly
         if let tt = tds.getSingleTweet(2) {
+            // test all aspects of the message to make sure everything is saves as expected
             XCTAssertTrue(tt.createdTimeDate > 0, "The created time for the tweet was not set correctly.  Expecting > 0, got \(tt.createdTimeDate)")
             XCTAssertTrue(tt.messageId > 0, "The message ID was not set correctly.  Expecting a number, got \(tt.messageId)")
             XCTAssertFalse(tt.message.isEmpty, "We are expecting a message.  The message was empty.")
@@ -111,6 +122,9 @@ class TWSimulatorTests: XCTestCase {
 
     }
 
+    /**
+     Testing the data source process to set the records in time order.
+     */
     func testDataSourceOrderOfMessagesAndRetrievalOfRecords() {
         
         let tds = TWDataSource.shared
@@ -176,6 +190,9 @@ class TWSimulatorTests: XCTestCase {
         XCTAssertTrue(theresults.count == 0, "We were expecting 0 records, we found \(theresults.count)")
     }
     
+    /**
+     Testing the data source save of data in JSON to the Documents directory.
+     */
     func testTweetSaveInDocumentsDirectoryAsJSONFile() {
         
         let tds = TWDataSource.shared
@@ -213,6 +230,9 @@ class TWSimulatorTests: XCTestCase {
     }
     
     //MARK: TWUser tests
+    /**
+     Testing the process to creat a user.
+     */
     func testTWUserCreation() {
         
         let theuser = TWUser()
