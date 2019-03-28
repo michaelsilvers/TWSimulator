@@ -19,8 +19,8 @@ class MessagesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // we only need to set these one time - yup - one time
-        readDateFormat.dateFormat = "'Read:' MM/dd/yyyy HH:mm:ss"
-        createdDateFormat.dateFormat = "MM/dd/yyyy HH:mm:ss"
+        readDateFormat.dateFormat = "'Read:' MM/dd/yyyy HH:mm"
+        createdDateFormat.dateFormat = "MM/dd/yyyy HH:mm"
 
     }
     
@@ -32,6 +32,7 @@ class MessagesTableViewController: UITableViewController {
         
         // fill the tweet array from the data source
         tweets = TWDataSource.shared.getMessages()
+        self.tableView.reloadData()
         
     }
 
@@ -44,12 +45,6 @@ class MessagesTableViewController: UITableViewController {
         
         // go back to the login screen
         navigationController?.performSegue(withIdentifier: "LoginSegue", sender: nil)
-        
-    }
-
-    @IBAction func addTweet(_ sender: Any) {
-        
-        // display a popover to add the tweet
         
     }
 

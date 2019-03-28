@@ -83,15 +83,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="wG0-Ic-Rx0" id="Ut6-ap-zRM"/>
-                            <outlet property="delegate" destination="wG0-Ic-Rx0" id="ZdG-Up-to8"/>
+                            <outlet property="dataSource" destination="wG0-Ic-Rx0" id="NVQ-rT-6cd"/>
+                            <outlet property="delegate" destination="wG0-Ic-Rx0" id="jNQ-BG-Aby"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TW Sim" id="yAQ-yR-WkV">
                         <rightBarButtonItems>
                             <barButtonItem style="plain" systemItem="add" id="BoU-YN-fKd">
                                 <connections>
-                                    <action selector="addTweet:" destination="wG0-Ic-Rx0" id="lvd-uV-S5X"/>
                                     <segue destination="kDZ-jP-MZF" kind="popoverPresentation" identifier="AddTweetSegue" popoverAnchorBarButtonItem="BoU-YN-fKd" id="k0B-gd-pF6">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -244,18 +243,78 @@
                 <viewController modalPresentationStyle="overCurrentContext" id="kDZ-jP-MZF" customClass="AddTweetViewController" customModule="TWSimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZEV-tn-J9x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Nm-Rql">
+                                <rect key="frame" x="16" y="36" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiE-z6-k5a">
+                                <rect key="frame" x="249" y="180" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="BRb-jo-mVw"/>
+                                </constraints>
+                                <state key="normal" title="Save My Tweet!"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="kDZ-jP-MZF" eventType="touchDown" id="hJP-c8-Pgm"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixx-FC-Arf">
+                                <rect key="frame" x="16" y="44" width="343" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" hint="Enter Your Message"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="pWj-6G-FQr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kDZ-jP-MZF" id="Nc5-xu-Z6r"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qo0-cs-RFs">
+                                <rect key="frame" x="16" y="180" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Bsn-eg-omO"/>
+                                </constraints>
+                                <state key="normal" title="Nope, Cancel"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="kDZ-jP-MZF" eventType="touchDown" id="IK0-kc-lwi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ixx-FC-Arf" firstAttribute="leading" secondItem="Gy4-YL-yAe" secondAttribute="leading" constant="16" id="2bv-YO-Pmc"/>
+                            <constraint firstItem="Gy4-YL-yAe" firstAttribute="trailing" secondItem="HpX-Nm-Rql" secondAttribute="trailing" constant="16" id="6b8-0g-Cgo"/>
+                            <constraint firstItem="ixx-FC-Arf" firstAttribute="top" secondItem="HpX-Nm-Rql" secondAttribute="bottom" constant="8" id="8tp-wW-85Y"/>
+                            <constraint firstItem="ixx-FC-Arf" firstAttribute="top" secondItem="HpX-Nm-Rql" secondAttribute="bottom" constant="8" id="9QL-Gr-jSm"/>
+                            <constraint firstItem="HpX-Nm-Rql" firstAttribute="leading" secondItem="Gy4-YL-yAe" secondAttribute="leading" constant="16" id="Hdt-VU-1mW"/>
+                            <constraint firstItem="HpX-Nm-Rql" firstAttribute="top" secondItem="Gy4-YL-yAe" secondAttribute="top" constant="16" id="Hkc-nc-gFL"/>
+                            <constraint firstItem="qo0-cs-RFs" firstAttribute="leading" secondItem="Gy4-YL-yAe" secondAttribute="leading" constant="16" id="KGw-5p-WCn"/>
+                            <constraint firstItem="XiE-z6-k5a" firstAttribute="top" secondItem="ixx-FC-Arf" secondAttribute="bottom" constant="8" id="S4H-6Z-uA4"/>
+                            <constraint firstItem="Gy4-YL-yAe" firstAttribute="trailing" secondItem="ixx-FC-Arf" secondAttribute="trailing" constant="16" id="ST4-96-wUM"/>
+                            <constraint firstItem="Gy4-YL-yAe" firstAttribute="trailing" secondItem="XiE-z6-k5a" secondAttribute="trailing" constant="16" id="ibQ-DU-xSm"/>
+                            <constraint firstItem="qo0-cs-RFs" firstAttribute="top" secondItem="ixx-FC-Arf" secondAttribute="bottom" constant="8" id="meK-hV-iHq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gy4-YL-yAe"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="qo0-cs-RFs" id="zww-l4-ZgT"/>
+                        <outlet property="errorLabel" destination="HpX-Nm-Rql" id="Fg0-yy-CPC"/>
+                        <outlet property="submitButton" destination="XiE-z6-k5a" id="LLn-vG-YjL"/>
+                        <outlet property="tweetMessage" destination="ixx-FC-Arf" id="5qu-e4-RN6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u45-2b-vSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="382"/>
+            <point key="canvasLocation" x="416.80000000000001" y="381.85907046476763"/>
         </scene>
     </scenes>
     <resources>
