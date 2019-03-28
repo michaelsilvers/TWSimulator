@@ -23,6 +23,7 @@ There are a few questions to answer:
 To run this project, clone the repository and:
 * Change the development team to your team.
 * Run the command "pod install" from the base directory.  If you do not have CocoaPods installed, refer to the [CocoaPods Installation Directions](https://guides.cocoapods.org/using/getting-started.html).
+* Open the workspace file (TWSimulator.xcworkspace) with XCode.
 
 ## General Notes
 Although I did not use RXSwift in this project, there are a few places it would prove useful when integrating the RESTful API.  These are:
