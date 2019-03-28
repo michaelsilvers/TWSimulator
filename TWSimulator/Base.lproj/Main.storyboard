@@ -89,7 +89,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TW Sim" id="yAQ-yR-WkV">
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="add" id="BoU-YN-fKd">
+                            <barButtonItem systemItem="add" id="BoU-YN-fKd">
                                 <connections>
                                     <segue destination="kDZ-jP-MZF" kind="popoverPresentation" identifier="AddTweetSegue" popoverAnchorBarButtonItem="BoU-YN-fKd" id="k0B-gd-pF6">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
