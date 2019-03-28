@@ -15,14 +15,15 @@ class TWDataSource {
     //MARK: Reading/Writing from documents
     // Based on: https://github.com/MakeAppPiePublishing/Tips_02_Read_Write_Text_End
     private var DocumentDirURL:URL{
-        let url = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         return url
     }
     
     private func fileURL(_ fileName:String,_ fileExtension:String="json")-> URL{
         
-        return DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension(fileExtension)
-        
+//        return DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension(fileExtension)
+        return DocumentDirURL.appendingPathComponent(fileName + "." + fileExtension)
+
     }
     
     func writeFile(_ writeString:String,_ fileName:String,_ fileExtension:String = "json") {
@@ -52,7 +53,7 @@ class TWDataSource {
         
         let url = fileURL(fileName, fileExtension)
         
-        retBool = FileManager.default.fileExists(atPath: url.absoluteString)
+        retBool = FileManager.default.fileExists(atPath: url.relativePath)
         
         return retBool
     }
