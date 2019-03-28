@@ -24,6 +24,7 @@ To run this project, clone the repository and:
 * Change the development team to your team.
 * Run the command "pod install" from the base directory.  If you do not have CocoaPods installed, refer to the [CocoaPods Installation Directions](https://guides.cocoapods.org/using/getting-started.html).
 * Open the workspace file (TWSimulator.xcworkspace) with XCode.
+* For testing, the username to use is `mike` and the password is `mike`
 
 ## General Notes
 Although I did not use RXSwift in this project, there are a few places it would prove useful when integrating the RESTful API.  These are:
@@ -33,3 +34,8 @@ Although I did not use RXSwift in this project, there are a few places it would 
 The design of this project is using MVP structure.  You will note the View Controllers, Models and Controllers.
 
 Please review the full comments in the code.  I have explained and commented as my normal development processes.
+
+## Screenshots
+| The login screen | The main Tweet screen | New Tweet screen |
+| --- | --- | --- |
+| ![Login Screen](login.png) | ![Main Tweet Screen](tweet-list.png) | ![New Tweet](new-tweet.png) |
