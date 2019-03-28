@@ -69,12 +69,12 @@ class MessagesTableViewController: UITableViewController {
         // put together the read time screen
         if let rt = tweet.readTimeDate, rt > 0 {
             // we read the tweet
-            cell.imageView?.isHidden = false
+            cell.readIndicator?.isHidden = false
             let readD = Date(timeIntervalSince1970: Double(rt))
             cell.readLabel?.text = readDateFormat.string(from: readD)
         } else {
             // we didn't read the tweet
-            cell.imageView?.isHidden = true
+            cell.readIndicator?.isHidden = true
             cell.readLabel?.text = ""
             // and update the tweet with the read date time
             tweet.readTimeDate = Int(Date().timeIntervalSince1970)

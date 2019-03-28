@@ -173,6 +173,10 @@ class TWDataSource {
                 messages.append(newMessage)
             }
         }
+        
+        // lets write the new stuff to the directory since things changed
+        TWDataSource.shared.saveMessages()
+        
     }
     
     func getSingleTweet(_ tweetId: Int) -> Tweet? {
@@ -193,12 +197,4 @@ class TWDataSource {
         
     }
     
-    private func loadMessages() {
-        
-        // if we were hitting an API, this is where we would access the API for
-        // past messages - but - since we are not using an API, we are saving
-        // messages in a json file in the documents directory for this app.
-        
-        
-    }
 }
