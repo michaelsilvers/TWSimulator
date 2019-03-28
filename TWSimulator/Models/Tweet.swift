@@ -13,12 +13,12 @@ import Foundation
  
  This `struct` is a model of the `Tweet` data.  The model implements the `Codable` protocol to allow for easy transformation to and from JSON.
  
- The model implements the `Comparable` protocol allowing for an easy method to determine if two `Tweet` items are the same.  The comparison is based on the unique `ID` for each `Tweet`.
+ The model implements the `Equatable` protocol allowing for an easy method to determine if two `Tweet` items are the same.  The comparison is based on the unique `ID` for each `Tweet`.
  
  - Author: Mike Silvers
  - Date: 3/25/19
  */
-struct Tweet : Codable, Comparable {
+struct Tweet : Codable, Equatable {
     
     //MARK: Variable definitions
     var messageId       : Int = 0
@@ -40,7 +40,7 @@ struct Tweet : Codable, Comparable {
         case message
     }
 
-    //MARK: Comparable protocol functions
+    //MARK: Equatable protocol functions
     /**
      
      This `static` function compares two objects to determine if they are not equal.
@@ -51,16 +51,9 @@ struct Tweet : Codable, Comparable {
      - Parameter rhs: the item to compare this item to
      - Returns: a `Bool` that indicates of the comparison is **true** or **false**
     */
-    static func < (lhs: Tweet, rhs: Tweet) -> Bool {
-        
-        // we start by assuming that the two items are equal
-        var compared = true
-        
-        // we only check the message ID as the other information may be different
-        if lhs.messageId != rhs.messageId, compared { compared = false }
-        
-        // Quick note: We sould just return the `true` or `false` if conditions are met, but the current configuration allows for multiple test to be performed easily by using a `compared` variable.
-        return compared
+    static func == (lhs: Tweet, rhs: Tweet) -> Bool {
+        // return the results of the comparison
+        return lhs.messageId == rhs.messageId
     }
     
     //MARK: Support functions
