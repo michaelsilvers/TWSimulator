@@ -36,6 +36,6 @@ The design of this project is using MVP structure.  You will note the View Contr
 Please review the full comments in the code.  I have explained and commented as my normal development processes.
 
 ## Screenshots
-| The login screen | The main Tweet screen | New Tweet screen |
+| Login screen | Main Tweet screen | New Tweet screen |
 | --- | --- | --- |
 | ![Login Screen](login.png) | ![Main Tweet Screen](tweet-list.png) | ![New Tweet](new-tweet.png) |
