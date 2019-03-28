@@ -16,6 +16,7 @@ import Foundation
  - Author: Mike Silvers
  - Date: 3/25/19
  */
+//MARK: User Errors
 enum UserError: Error {
     
     /**
