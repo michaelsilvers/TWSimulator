@@ -10,20 +10,10 @@ import UIKit
 
 class MessageTableViewCell: UITableViewCell {
 
+    // MARK: Variable declarations
     @IBOutlet var readIndicator: UIImageView?
     @IBOutlet var messageLabel: UILabel?
     @IBOutlet var readLabel: UILabel?
     @IBOutlet var sentLabel: UILabel?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

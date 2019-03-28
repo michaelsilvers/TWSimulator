@@ -11,14 +11,16 @@ import SwiftKeychainWrapper
 
 class MessagesTableViewController: UITableViewController {
 
+    // MARK: Variable declarations
     private var tweets: [Tweet] = []
     private var readDateFormat = DateFormatter()
     private var createdDateFormat = DateFormatter()
 
+    //MARK: Base view functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // we only need to set these one time - yup - one time
+        // Prepare the date formatters for the date display for the Tweet
         readDateFormat.dateFormat = "'Read:' MM/dd/yyyy HH:mm"
         createdDateFormat.dateFormat = "MM/dd/yyyy HH:mm"
 
@@ -37,6 +39,14 @@ class MessagesTableViewController: UITableViewController {
     }
 
     // MARK: Supporting functions
+    /**
+     This function processes the logout when the user presses a button.
+     
+     The user information is maintained in the keychain for security purposes.
+     
+     We remove the user from the when the user logs out.  The presence of the user in the keychain determines if the user is loggedin between app open and close.
+     - Parameter sender: The reference to the UIButton initiating the function call.
+     */
     @IBAction func logoutUser(_ sender: Any) {
         
         // destroy the user in the keychain
@@ -56,17 +66,20 @@ class MessagesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // the array of tweets is the datasource for the table
         return tweets.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // we are grabbing the custom cell from the queue
         let cell = (tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell)
 
         // Configure the cell...
         var tweet = tweets[indexPath.row]
 
-        // put together the read time screen
+        // put together the read time for display
         if let rt = tweet.readTimeDate, rt > 0 {
             // we read the tweet
             cell.readIndicator?.isHidden = false
@@ -76,7 +89,7 @@ class MessagesTableViewController: UITableViewController {
             // we didn't read the tweet
             cell.readIndicator?.isHidden = true
             cell.readLabel?.text = ""
-            // and update the tweet with the read date time
+            // and update the tweet with the read date time - it will show next time the table is reloaded.
             tweet.readTimeDate = Int(Date().timeIntervalSince1970)
             // update the tweet with the new read date
             TWDataSource.shared.addMessage(tweet)
@@ -90,10 +103,12 @@ class MessagesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        // this setting allows the cells to be autosized dependent upon the size of the dynamic labels inside the cell
         return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // we do not allow the color change if the user touches the cell
         tableView.deselectRow(at: indexPath, animated: false)
     }
 
