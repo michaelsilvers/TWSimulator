@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
             user = try TWComms().checkLogin(usernameText?.text ?? "", passwordText?.text ?? "")
             
             // now we should save the user to the keychain so we are able to "autosign-in"
-            if let saveuser = user {
+            if let saveuser = try? JSONEncoder().encode(user) {
                 if !KeychainWrapper.standard.set(saveuser, forKey: "TWUser") {
                     
                     // there was a problem saving the user in the keychain

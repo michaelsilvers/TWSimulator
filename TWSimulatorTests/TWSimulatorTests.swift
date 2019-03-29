@@ -250,6 +250,5 @@ class TWSimulatorTests: XCTestCase {
         theuser.lastLoggedInTime = loggedin
         XCTAssertTrue(theuser.lastLoggedInTime == loggedin,
                       "The last logged in time is not \(loggedin).  It is \(theuser.lastLoggedInTime )")
-    }
-
+    }    
 }

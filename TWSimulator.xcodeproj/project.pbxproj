@@ -29,8 +29,8 @@
 		127C3E45224B0591002A8399 /* TWComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E43224B0591002A8399 /* TWComms.swift */; };
 		127C3E47224C1C5A002A8399 /* AddTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */; };
 		127C3E48224C1C5A002A8399 /* AddTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */; };
-		925C0BAF1D0EB7BC397C43A4 /* Pods_TWSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */; };
-		EE0D5EDE618E1C6F91814B2E /* Pods_TWSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */; };
+		A5D708EDEBAE3815AAE430BA /* Pods_TWSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38846133AF4E414441282CD /* Pods_TWSimulatorTests.framework */; };
+		BE263D5C7658B5184DB5320B /* Pods_TWSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CFBDBA6CE91BCA1EA2D049 /* Pods_TWSimulator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122C7D9622498F0F00063FE0 /* TWSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		122C7D9922498F0F00063FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		122C7D9B22498F0F00063FE0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,11 +62,12 @@
 		122C7DCB224A594200063FE0 /* TWDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataSource.swift; sourceTree = "<group>"; };
 		127C3E43224B0591002A8399 /* TWComms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWComms.swift; sourceTree = "<group>"; };
 		127C3E46224C1C5A002A8399 /* AddTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTweetViewController.swift; sourceTree = "<group>"; };
-		A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.release.xcconfig"; sourceTree = "<group>"; };
-		C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator.debug.xcconfig"; sourceTree = "<group>"; };
-		D2A2D32EF8612C6B8A9BD5E6 /* Pods-TWSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D787DCCE5705347403CCE628 /* Pods-TWSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E7B9E04BFD0705E1ACB3816 /* Pods-TWSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.release.xcconfig"; path = "Target Support Files/Pods-TWSimulator/Pods-TWSimulator.release.xcconfig"; sourceTree = "<group>"; };
+		607C616A2EA25E7AD6E02F43 /* Pods-TWSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulatorTests.release.xcconfig"; path = "Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		82CFBDBA6CE91BCA1EA2D049 /* Pods_TWSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A384DA654FD9A28A5EEE631C /* Pods-TWSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulator.debug.xcconfig"; path = "Target Support Files/Pods-TWSimulator/Pods-TWSimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		D0B5EA67CB4467FB606449E6 /* Pods-TWSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWSimulatorTests.debug.xcconfig"; path = "Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F38846133AF4E414441282CD /* Pods_TWSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925C0BAF1D0EB7BC397C43A4 /* Pods_TWSimulator.framework in Frameworks */,
+				BE263D5C7658B5184DB5320B /* Pods_TWSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE0D5EDE618E1C6F91814B2E /* Pods_TWSimulatorTests.framework in Frameworks */,
+				A5D708EDEBAE3815AAE430BA /* Pods_TWSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +96,8 @@
 				122C7D9822498F0F00063FE0 /* TWSimulator */,
 				122C7DAD22498F1200063FE0 /* TWSimulatorTests */,
 				122C7D9722498F0F00063FE0 /* Products */,
-				F7E19EA11CF1F95B6D4EA6C1 /* Pods */,
-				BEFC4D647B6147E6F7F2A1BD /* Frameworks */,
+				785B60CDE03B7A3B34531485 /* Pods */,
+				97E1BE443FA6FE7F807347FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,24 +164,25 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		BEFC4D647B6147E6F7F2A1BD /* Frameworks */ = {
+		785B60CDE03B7A3B34531485 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A2D69AE72DF5715FC649802D /* Pods_TWSimulator.framework */,
-				0FDF0CFB4395B6726E583172 /* Pods_TWSimulatorTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F7E19EA11CF1F95B6D4EA6C1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */,
-				BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */,
-				D2A2D32EF8612C6B8A9BD5E6 /* Pods-TWSimulatorTests.debug.xcconfig */,
-				D787DCCE5705347403CCE628 /* Pods-TWSimulatorTests.release.xcconfig */,
+				A384DA654FD9A28A5EEE631C /* Pods-TWSimulator.debug.xcconfig */,
+				5E7B9E04BFD0705E1ACB3816 /* Pods-TWSimulator.release.xcconfig */,
+				D0B5EA67CB4467FB606449E6 /* Pods-TWSimulatorTests.debug.xcconfig */,
+				607C616A2EA25E7AD6E02F43 /* Pods-TWSimulatorTests.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		97E1BE443FA6FE7F807347FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82CFBDBA6CE91BCA1EA2D049 /* Pods_TWSimulator.framework */,
+				F38846133AF4E414441282CD /* Pods_TWSimulatorTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,11 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 122C7DB322498F1200063FE0 /* Build configuration list for PBXNativeTarget "TWSimulator" */;
 			buildPhases = (
-				8EE82621EB69FFB3D502809F /* [CP] Check Pods Manifest.lock */,
+				B03CB5F0E534E23EE1C7B68D /* [CP] Check Pods Manifest.lock */,
 				122C7D9222498F0F00063FE0 /* Sources */,
 				122C7D9322498F0F00063FE0 /* Frameworks */,
 				122C7D9422498F0F00063FE0 /* Resources */,
-				C5DFDEFFFD01A1D89DCA21AC /* [CP] Embed Pods Frameworks */,
+				2132EA4F4A518C99C9EE2A19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,10 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 122C7DB622498F1200063FE0 /* Build configuration list for PBXNativeTarget "TWSimulatorTests" */;
 			buildPhases = (
-				E7AECCF371D4E1C4D2702DA2 /* [CP] Check Pods Manifest.lock */,
+				0B4A7B04C4A1E403A93C0D8F /* [CP] Check Pods Manifest.lock */,
 				122C7DA622498F1200063FE0 /* Sources */,
 				122C7DA722498F1200063FE0 /* Frameworks */,
 				122C7DA822498F1200063FE0 /* Resources */,
+				B9F1087A007CD2C571A3370A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,7 +286,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8EE82621EB69FFB3D502809F /* [CP] Check Pods Manifest.lock */ = {
+		0B4A7B04C4A1E403A93C0D8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWSimulatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2132EA4F4A518C99C9EE2A19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B03CB5F0E534E23EE1C7B68D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,7 +352,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5DFDEFFFD01A1D89DCA21AC /* [CP] Embed Pods Frameworks */ = {
+		B9F1087A007CD2C571A3370A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,7 +360,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -325,29 +371,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TWSimulator/Pods-TWSimulator-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7AECCF371D4E1C4D2702DA2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TWSimulatorTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TWSimulatorTests/Pods-TWSimulatorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -534,7 +558,7 @@
 		};
 		122C7DB422498F1200063FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4A64CE09FDFAB21D1BB067C /* Pods-TWSimulator.debug.xcconfig */;
+			baseConfigurationReference = A384DA654FD9A28A5EEE631C /* Pods-TWSimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,7 +578,7 @@
 		};
 		122C7DB522498F1200063FE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDF69C906AFB931C7D92B6B2 /* Pods-TWSimulator.release.xcconfig */;
+			baseConfigurationReference = 5E7B9E04BFD0705E1ACB3816 /* Pods-TWSimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -574,9 +598,9 @@
 		};
 		122C7DB722498F1200063FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2A2D32EF8612C6B8A9BD5E6 /* Pods-TWSimulatorTests.debug.xcconfig */;
+			baseConfigurationReference = D0B5EA67CB4467FB606449E6 /* Pods-TWSimulatorTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E994U5CV5A;
@@ -596,9 +620,9 @@
 		};
 		122C7DB822498F1200063FE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D787DCCE5705347403CCE628 /* Pods-TWSimulatorTests.release.xcconfig */;
+			baseConfigurationReference = 607C616A2EA25E7AD6E02F43 /* Pods-TWSimulatorTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E994U5CV5A;

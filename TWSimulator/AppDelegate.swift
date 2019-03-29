@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // we need to see if the user is still logged in:
         // get the user from the keychain
-        if let _ = KeychainWrapper.standard.object(forKey: "TWUser") {
+        if let _ = KeychainWrapper.standard.data(forKey: "TWUser") {
             // instance the TWDataSource so the past tweets are loaded before they are shown
             TWDataSource.shared.getMessages()
         } else {
